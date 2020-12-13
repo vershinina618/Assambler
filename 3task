@@ -1,0 +1,19 @@
+#include <iostream>
+
+int main()
+{
+    int a = 5, b = 7;
+    _asm
+    {
+        mov eax, a
+        mov ebx, b
+        mov edx, eax
+        mov eax, ebx
+        mov ebx, eax
+        mov a, eax
+        mov b, edx
+    }
+    printf("a = %d\nb = %d", a,b);
+    
+    return 0;
+}
