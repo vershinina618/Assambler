@@ -1,0 +1,33 @@
+#include <iostream>
+#include <stdio.h>
+
+int main()
+{
+    int a = 5, b = 7, sum, diff, prod,quotient, remainder;
+    _asm
+    {
+        mov eax, a
+        mov ebx, b
+        add eax, ebx
+        mov sum, eax
+        mov eax, a
+        sub eax, ebx
+        mov diff, eax
+        mov eax, a
+        mul ebx
+        mov prod,eax
+        mov eax, a
+        div ebx
+        mov quotient, eax
+        mov remainder, edx
+        
+
+
+    }
+    printf ("addition: %d\n", sum);
+    printf("subtraction: %d\n", diff);
+    printf("multiply: %d\n", prod);
+    printf("divide: %d remainder : %d\n", quotient, remainder);
+
+    return 0;
+}
