@@ -19,9 +19,6 @@ int main()
         div ebx
         mov quotient, eax
         mov remainder, edx
-        
-
-
     }
     printf ("addition: %d\n", sum);
     printf("subtraction: %d\n", diff);
