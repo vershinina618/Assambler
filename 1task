@@ -23,7 +23,7 @@ int main()
     printf ("addition: %d\n", sum);
     printf("subtraction: %d\n", diff);
     printf("multiply: %d\n", prod);
-    printf("divide: %d remainder : %d\n", quotient, remainder);
+    printf("divide: %d remainder : %d\n", quotient, remainder); 
 
     return 0;
 }
