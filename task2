@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main()
+{
+    int a = 5, b = 7, c = 2, d = 3, sum1 = 0, res = 0, remainder = 0;
+    
+    _asm
+    {
+        mov eax, a
+        mov ebx, b
+        mov ecx, c
+        mov edx, d
+        add eax, ebx     //a+b 
+        add eax, ecx     // a + b +c
+        add eax, edx     //eax = a + b + c + d
+        mov sum1, eax    
+        mov eax, a
+        mul ebx           // eax = a * b
+        imul ecx, -11     // ecx = - 11 * c
+        mov edx, d
+        imul edx, 57      // edx = 57 * d
+        add eax, ecx
+        add eax, edx       // eax = a * b - 11 * c + 57 * d
+        mov ebx, sum1
+        mov edx, 0
+        div ebx          // eax = (a * b - 11 * c + 57 * d) / (a + b + c + d)
+        mov res, eax     
+        mov remainder, edx   // ostatok
+    }
+    printf("res = %d\nremainder = %d", res, remainder);
+}
