@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+
+
+int main()
+{
+    int a, b;
+
+    _asm
+    {
+        mov eax, 3000000000
+        mov ebx, 3000000000
+        mov edx, 0
+        mov ecx, 0
+        add eax, ebx
+        adc ecx, edx
+        mov a, eax
+        mov b, ecx
+    }
+
+    std:: cout << b * pow(2,32) + a;
+    
+}
